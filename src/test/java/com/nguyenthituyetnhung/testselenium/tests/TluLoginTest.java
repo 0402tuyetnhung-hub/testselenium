@@ -19,11 +19,16 @@ class TluLoginTest {
 
     @BeforeAll
     void setUp() {
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized");
-        driver = new ChromeDriver(options);
-        loginPage = new TluLoginPage(driver);
+    WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+    options.addArguments("--start-maximized");
+    
+    options.addArguments("--headless=new");
+    options.addArguments("--no-sandbox");
+    options.addArguments("--disable-dev-shm-usage");
+    
+    driver = new ChromeDriver(options);
+    loginPage = new TluLoginPage(driver);
     }
 
     @AfterAll
