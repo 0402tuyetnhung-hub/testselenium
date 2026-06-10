@@ -32,8 +32,3 @@ jobs:
         with:
           name: test-reports
           path: target/surefire-reports/
-      - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2
-        if: always()
-        with:
-          files: target/surefire-reports/*.xml
