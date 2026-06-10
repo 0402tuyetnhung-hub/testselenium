@@ -20,16 +20,16 @@ class TluLoginTest {
 
     @BeforeAll
     void setUp() {
-    WebDriverManager.chromedriver().setup();
-    ChromeOptions options = new ChromeOptions();
-    options.addArguments("--start-maximized");
-    
-    options.addArguments("--headless=new");
-    options.addArguments("--no-sandbox");
-    options.addArguments("--disable-dev-shm-usage");
-    
-    driver = new ChromeDriver(options);
-    loginPage = new TluLoginPage(driver);
+        WebDriverManager.chromedriver().setup();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--start-maximized");
+
+        options.addArguments("--headless=new");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+
+        driver = new ChromeDriver(options);
+        loginPage = new TluLoginPage(driver);
     }
 
     @AfterAll
@@ -66,6 +66,6 @@ class TluLoginTest {
 
         Thread.sleep(2000);
         boolean stillOnLogin = driver.getCurrentUrl().contains("/login");
-        Assertions.assertTrue(stillOnLogin, "Sai mật khẩu phải ở lại trang login!");
+        Assertions.assertFalse(stillOnLogin, "Demo test fail!");
     }
 }
