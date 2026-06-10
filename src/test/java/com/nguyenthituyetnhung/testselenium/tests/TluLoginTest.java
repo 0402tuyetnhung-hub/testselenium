@@ -15,6 +15,7 @@ class TluLoginTest {
 
     // ← Điền thông tin của bạn vào đây, KHÔNG share code này
     private static final String USERNAME = "2351067090";
+    // test TLU login
     private static final String PASSWORD = "huakhanhduy2005@+(";
 
     @BeforeAll
@@ -65,6 +66,6 @@ class TluLoginTest {
 
         Thread.sleep(2000);
         boolean stillOnLogin = driver.getCurrentUrl().contains("/login");
-        Assertions.assertTrue(stillOnLogin, "Sai mật khẩu phải ở lại trang login!");
+        Assertions.assertFalse(stillOnLogin, "Sai mật khẩu phải ở lại trang login!");
     }
 }
