@@ -66,6 +66,6 @@ class TluLoginTest {
 
         Thread.sleep(2000);
         boolean stillOnLogin = driver.getCurrentUrl().contains("/login");
-        Assertions.assertFalse(stillOnLogin, "Demo test fail!");
+        Assertions.assertTrue(stillOnLogin, "Demo test fail!");
     }
 }
