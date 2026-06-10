@@ -66,6 +66,6 @@ class TluLoginTest {
 
         Thread.sleep(2000);
         boolean stillOnLogin = driver.getCurrentUrl().contains("/login");
-        Assertions.assertFalse(stillOnLogin, "Sai mật khẩu phải ở lại trang login!");
+        Assertions.assertTrue(stillOnLogin, "Sai mật khẩu phải ở lại trang login!");
     }
 }
